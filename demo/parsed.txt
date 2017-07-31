@@ -1,0 +1,296 @@
+B
+{
+    A A_arr[10]
+    [
+        [00] A = 
+        {
+            unsigned int         a                                   = 0               (addr 00000000 size 00000004)
+            unsigned int         b                                   = 1               (addr 00000004 size 00000004)
+            long unsigned int    c                                   = 2               (addr 00000008 size 00000008)
+            long long unsigned int d                                   = 3               (addr 00000010 size 00000008)
+        },
+        [01] A = 
+        {
+            unsigned int         a                                   = 10              (addr 00000018 size 00000004)
+            unsigned int         b                                   = 11              (addr 0000001C size 00000004)
+            long unsigned int    c                                   = 12              (addr 00000020 size 00000008)
+            long long unsigned int d                                   = 13              (addr 00000028 size 00000008)
+        },
+        [02] A = 
+        {
+            unsigned int         a                                   = 20              (addr 00000030 size 00000004)
+            unsigned int         b                                   = 21              (addr 00000034 size 00000004)
+            long unsigned int    c                                   = 22              (addr 00000038 size 00000008)
+            long long unsigned int d                                   = 23              (addr 00000040 size 00000008)
+        },
+        [03] A = 
+        {
+            unsigned int         a                                   = 30              (addr 00000048 size 00000004)
+            unsigned int         b                                   = 31              (addr 0000004C size 00000004)
+            long unsigned int    c                                   = 32              (addr 00000050 size 00000008)
+            long long unsigned int d                                   = 33              (addr 00000058 size 00000008)
+        },
+        [04] A = 
+        {
+            unsigned int         a                                   = 40              (addr 00000060 size 00000004)
+            unsigned int         b                                   = 41              (addr 00000064 size 00000004)
+            long unsigned int    c                                   = 42              (addr 00000068 size 00000008)
+            long long unsigned int d                                   = 43              (addr 00000070 size 00000008)
+        },
+        [05] A = 
+        {
+            unsigned int         a                                   = 50              (addr 00000078 size 00000004)
+            unsigned int         b                                   = 51              (addr 0000007C size 00000004)
+            long unsigned int    c                                   = 52              (addr 00000080 size 00000008)
+            long long unsigned int d                                   = 53              (addr 00000088 size 00000008)
+        },
+        [06] A = 
+        {
+            unsigned int         a                                   = 60              (addr 00000090 size 00000004)
+            unsigned int         b                                   = 61              (addr 00000094 size 00000004)
+            long unsigned int    c                                   = 62              (addr 00000098 size 00000008)
+            long long unsigned int d                                   = 63              (addr 000000A0 size 00000008)
+        },
+        [07] A = 
+        {
+            unsigned int         a                                   = 70              (addr 000000A8 size 00000004)
+            unsigned int         b                                   = 71              (addr 000000AC size 00000004)
+            long unsigned int    c                                   = 72              (addr 000000B0 size 00000008)
+            long long unsigned int d                                   = 73              (addr 000000B8 size 00000008)
+        },
+        [08] A = 
+        {
+            unsigned int         a                                   = 80              (addr 000000C0 size 00000004)
+            unsigned int         b                                   = 81              (addr 000000C4 size 00000004)
+            long unsigned int    c                                   = 82              (addr 000000C8 size 00000008)
+            long long unsigned int d                                   = 83              (addr 000000D0 size 00000008)
+        },
+        [09] A = 
+        {
+            unsigned int         a                                   = 90              (addr 000000D8 size 00000004)
+            unsigned int         b                                   = 91              (addr 000000DC size 00000004)
+            long unsigned int    c                                   = 92              (addr 000000E0 size 00000008)
+            long long unsigned int d                                   = 93              (addr 000000E8 size 00000008)
+        },
+    ]
+    unsigned char byte_arr[2][3][4][5]
+    [
+        [0]  = 
+        [
+            [0]  = 
+            [
+                [0]  = 
+                [
+                    [0]  = 0               (addr 000000F0 size 00000001),
+                    [1]  = 1               (addr 000000F1 size 00000001),
+                    [2]  = 2               (addr 000000F2 size 00000001),
+                    [3]  = 3               (addr 000000F3 size 00000001),
+                    [4]  = 4               (addr 000000F4 size 00000001),
+                ],
+                [1]  = 
+                [
+                    [0]  = 5               (addr 000000F5 size 00000001),
+                    [1]  = 6               (addr 000000F6 size 00000001),
+                    [2]  = 7               (addr 000000F7 size 00000001),
+                    [3]  = 8               (addr 000000F8 size 00000001),
+                    [4]  = 9               (addr 000000F9 size 00000001),
+                ],
+                [2]  = 
+                [
+                    [0]  = 10              (addr 000000FA size 00000001),
+                    [1]  = 11              (addr 000000FB size 00000001),
+                    [2]  = 12              (addr 000000FC size 00000001),
+                    [3]  = 13              (addr 000000FD size 00000001),
+                    [4]  = 14              (addr 000000FE size 00000001),
+                ],
+                [3]  = 
+                [
+                    [0]  = 15              (addr 000000FF size 00000001),
+                    [1]  = 16              (addr 00000100 size 00000001),
+                    [2]  = 17              (addr 00000101 size 00000001),
+                    [3]  = 18              (addr 00000102 size 00000001),
+                    [4]  = 19              (addr 00000103 size 00000001),
+                ],
+            ],
+            [1]  = 
+            [
+                [0]  = 
+                [
+                    [0]  = 20              (addr 00000104 size 00000001),
+                    [1]  = 21              (addr 00000105 size 00000001),
+                    [2]  = 22              (addr 00000106 size 00000001),
+                    [3]  = 23              (addr 00000107 size 00000001),
+                    [4]  = 24              (addr 00000108 size 00000001),
+                ],
+                [1]  = 
+                [
+                    [0]  = 25              (addr 00000109 size 00000001),
+                    [1]  = 26              (addr 0000010A size 00000001),
+                    [2]  = 27              (addr 0000010B size 00000001),
+                    [3]  = 28              (addr 0000010C size 00000001),
+                    [4]  = 29              (addr 0000010D size 00000001),
+                ],
+                [2]  = 
+                [
+                    [0]  = 30              (addr 0000010E size 00000001),
+                    [1]  = 31              (addr 0000010F size 00000001),
+                    [2]  = 32              (addr 00000110 size 00000001),
+                    [3]  = 33              (addr 00000111 size 00000001),
+                    [4]  = 34              (addr 00000112 size 00000001),
+                ],
+                [3]  = 
+                [
+                    [0]  = 35              (addr 00000113 size 00000001),
+                    [1]  = 36              (addr 00000114 size 00000001),
+                    [2]  = 37              (addr 00000115 size 00000001),
+                    [3]  = 38              (addr 00000116 size 00000001),
+                    [4]  = 39              (addr 00000117 size 00000001),
+                ],
+            ],
+            [2]  = 
+            [
+                [0]  = 
+                [
+                    [0]  = 40              (addr 00000118 size 00000001),
+                    [1]  = 41              (addr 00000119 size 00000001),
+                    [2]  = 42              (addr 0000011A size 00000001),
+                    [3]  = 43              (addr 0000011B size 00000001),
+                    [4]  = 44              (addr 0000011C size 00000001),
+                ],
+                [1]  = 
+                [
+                    [0]  = 45              (addr 0000011D size 00000001),
+                    [1]  = 46              (addr 0000011E size 00000001),
+                    [2]  = 47              (addr 0000011F size 00000001),
+                    [3]  = 48              (addr 00000120 size 00000001),
+                    [4]  = 49              (addr 00000121 size 00000001),
+                ],
+                [2]  = 
+                [
+                    [0]  = 50              (addr 00000122 size 00000001),
+                    [1]  = 51              (addr 00000123 size 00000001),
+                    [2]  = 52              (addr 00000124 size 00000001),
+                    [3]  = 53              (addr 00000125 size 00000001),
+                    [4]  = 54              (addr 00000126 size 00000001),
+                ],
+                [3]  = 
+                [
+                    [0]  = 55              (addr 00000127 size 00000001),
+                    [1]  = 56              (addr 00000128 size 00000001),
+                    [2]  = 57              (addr 00000129 size 00000001),
+                    [3]  = 58              (addr 0000012A size 00000001),
+                    [4]  = 59              (addr 0000012B size 00000001),
+                ],
+            ],
+        ],
+        [1]  = 
+        [
+            [0]  = 
+            [
+                [0]  = 
+                [
+                    [0]  = 60              (addr 0000012C size 00000001),
+                    [1]  = 61              (addr 0000012D size 00000001),
+                    [2]  = 62              (addr 0000012E size 00000001),
+                    [3]  = 63              (addr 0000012F size 00000001),
+                    [4]  = 64              (addr 00000130 size 00000001),
+                ],
+                [1]  = 
+                [
+                    [0]  = 65              (addr 00000131 size 00000001),
+                    [1]  = 66              (addr 00000132 size 00000001),
+                    [2]  = 67              (addr 00000133 size 00000001),
+                    [3]  = 68              (addr 00000134 size 00000001),
+                    [4]  = 69              (addr 00000135 size 00000001),
+                ],
+                [2]  = 
+                [
+                    [0]  = 70              (addr 00000136 size 00000001),
+                    [1]  = 71              (addr 00000137 size 00000001),
+                    [2]  = 72              (addr 00000138 size 00000001),
+                    [3]  = 73              (addr 00000139 size 00000001),
+                    [4]  = 74              (addr 0000013A size 00000001),
+                ],
+                [3]  = 
+                [
+                    [0]  = 75              (addr 0000013B size 00000001),
+                    [1]  = 76              (addr 0000013C size 00000001),
+                    [2]  = 77              (addr 0000013D size 00000001),
+                    [3]  = 78              (addr 0000013E size 00000001),
+                    [4]  = 79              (addr 0000013F size 00000001),
+                ],
+            ],
+            [1]  = 
+            [
+                [0]  = 
+                [
+                    [0]  = 80              (addr 00000140 size 00000001),
+                    [1]  = 81              (addr 00000141 size 00000001),
+                    [2]  = 82              (addr 00000142 size 00000001),
+                    [3]  = 83              (addr 00000143 size 00000001),
+                    [4]  = 84              (addr 00000144 size 00000001),
+                ],
+                [1]  = 
+                [
+                    [0]  = 85              (addr 00000145 size 00000001),
+                    [1]  = 86              (addr 00000146 size 00000001),
+                    [2]  = 87              (addr 00000147 size 00000001),
+                    [3]  = 88              (addr 00000148 size 00000001),
+                    [4]  = 89              (addr 00000149 size 00000001),
+                ],
+                [2]  = 
+                [
+                    [0]  = 90              (addr 0000014A size 00000001),
+                    [1]  = 91              (addr 0000014B size 00000001),
+                    [2]  = 92              (addr 0000014C size 00000001),
+                    [3]  = 93              (addr 0000014D size 00000001),
+                    [4]  = 94              (addr 0000014E size 00000001),
+                ],
+                [3]  = 
+                [
+                    [0]  = 95              (addr 0000014F size 00000001),
+                    [1]  = 96              (addr 00000150 size 00000001),
+                    [2]  = 97              (addr 00000151 size 00000001),
+                    [3]  = 98              (addr 00000152 size 00000001),
+                    [4]  = 99              (addr 00000153 size 00000001),
+                ],
+            ],
+            [2]  = 
+            [
+                [0]  = 
+                [
+                    [0]  = 100             (addr 00000154 size 00000001),
+                    [1]  = 101             (addr 00000155 size 00000001),
+                    [2]  = 102             (addr 00000156 size 00000001),
+                    [3]  = 103             (addr 00000157 size 00000001),
+                    [4]  = 104             (addr 00000158 size 00000001),
+                ],
+                [1]  = 
+                [
+                    [0]  = 105             (addr 00000159 size 00000001),
+                    [1]  = 106             (addr 0000015A size 00000001),
+                    [2]  = 107             (addr 0000015B size 00000001),
+                    [3]  = 108             (addr 0000015C size 00000001),
+                    [4]  = 109             (addr 0000015D size 00000001),
+                ],
+                [2]  = 
+                [
+                    [0]  = 110             (addr 0000015E size 00000001),
+                    [1]  = 111             (addr 0000015F size 00000001),
+                    [2]  = 112             (addr 00000160 size 00000001),
+                    [3]  = 113             (addr 00000161 size 00000001),
+                    [4]  = 114             (addr 00000162 size 00000001),
+                ],
+                [3]  = 
+                [
+                    [0]  = 115             (addr 00000163 size 00000001),
+                    [1]  = 116             (addr 00000164 size 00000001),
+                    [2]  = 117             (addr 00000165 size 00000001),
+                    [3]  = 118             (addr 00000166 size 00000001),
+                    [4]  = 119             (addr 00000167 size 00000001),
+                ],
+            ],
+        ],
+    ]
+    short unsigned int   var                                 = 123             (addr 00000168 size 00000002)
+}

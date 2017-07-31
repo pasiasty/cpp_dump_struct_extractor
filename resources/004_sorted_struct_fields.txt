@@ -1,0 +1,26 @@
+{
+    "py/newargs": {
+        "py/tuple": [
+            "B",
+            [
+                [
+                    "\tstruct A {",
+                    "\t\tunsigned int       a;                                                    /*     0     4 */",
+                    "\t\tunsigned char      b;                                                    /*     4     1 */",
+                    "\t\tlong unsigned int  c;                                                    /*     8     8 */",
+                    "\t\tlong long unsigned int d;                                                /*    16     8 */",
+                    "\t} A_arr[10]; /*     0   240 */"
+                ],
+                "\tunsigned char              byte_arr[5][4][3][7];                                 /*   240   420 */",
+                "\tshort unsigned int         var;                                                  /*   660     2 */"
+            ]
+        ]
+    },
+    "py/object": "pahole_output_parser.MainStructureSorted",
+    "py/seq": [
+        "B",
+        {
+            "py/id": 1
+        }
+    ]
+}

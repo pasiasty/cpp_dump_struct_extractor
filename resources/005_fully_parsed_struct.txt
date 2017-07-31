@@ -1,0 +1,173 @@
+{
+    "py/newargs": {
+        "py/tuple": [
+            "B",
+            [
+                {
+                    "py/newargs": {
+                        "py/tuple": [
+                            "A",
+                            "A_arr",
+                            [
+                                {
+                                    "py/newargs": {
+                                        "py/tuple": [
+                                            "unsigned int",
+                                            "a",
+                                            [],
+                                            0,
+                                            4
+                                        ]
+                                    },
+                                    "py/object": "pahole_output_parser.SimpleFieldEntry",
+                                    "py/seq": [
+                                        "unsigned int",
+                                        "a",
+                                        {
+                                            "py/id": 5
+                                        },
+                                        0,
+                                        4
+                                    ]
+                                },
+                                {
+                                    "py/newargs": {
+                                        "py/tuple": [
+                                            "unsigned char",
+                                            "b",
+                                            [],
+                                            4,
+                                            1
+                                        ]
+                                    },
+                                    "py/object": "pahole_output_parser.SimpleFieldEntry",
+                                    "py/seq": [
+                                        "unsigned char",
+                                        "b",
+                                        {
+                                            "py/id": 7
+                                        },
+                                        4,
+                                        1
+                                    ]
+                                },
+                                {
+                                    "py/newargs": {
+                                        "py/tuple": [
+                                            "long unsigned int",
+                                            "c",
+                                            [],
+                                            8,
+                                            8
+                                        ]
+                                    },
+                                    "py/object": "pahole_output_parser.SimpleFieldEntry",
+                                    "py/seq": [
+                                        "long unsigned int",
+                                        "c",
+                                        {
+                                            "py/id": 9
+                                        },
+                                        8,
+                                        8
+                                    ]
+                                },
+                                {
+                                    "py/newargs": {
+                                        "py/tuple": [
+                                            "long long unsigned int",
+                                            "d",
+                                            [],
+                                            22,
+                                            8
+                                        ]
+                                    },
+                                    "py/object": "pahole_output_parser.SimpleFieldEntry",
+                                    "py/seq": [
+                                        "long long unsigned int",
+                                        "d",
+                                        {
+                                            "py/id": 11
+                                        },
+                                        22,
+                                        8
+                                    ]
+                                }
+                            ],
+                            [
+                                10
+                            ],
+                            576
+                        ]
+                    },
+                    "py/object": "pahole_output_parser.StructureFieldEntry",
+                    "py/seq": [
+                        "A",
+                        "A_arr",
+                        {
+                            "py/id": 3
+                        },
+                        {
+                            "py/id": 12
+                        },
+                        576
+                    ]
+                },
+                {
+                    "py/newargs": {
+                        "py/tuple": [
+                            "unsigned char",
+                            "byte_arr",
+                            [
+                                5,
+                                4,
+                                3,
+                                7
+                            ],
+                            576,
+                            1056
+                        ]
+                    },
+                    "py/object": "pahole_output_parser.SimpleFieldEntry",
+                    "py/seq": [
+                        "unsigned char",
+                        "byte_arr",
+                        {
+                            "py/id": 14
+                        },
+                        576,
+                        1056
+                    ]
+                },
+                {
+                    "py/newargs": {
+                        "py/tuple": [
+                            "short unsigned int",
+                            "var",
+                            [],
+                            1632,
+                            2
+                        ]
+                    },
+                    "py/object": "pahole_output_parser.SimpleFieldEntry",
+                    "py/seq": [
+                        "short unsigned int",
+                        "var",
+                        {
+                            "py/id": 16
+                        },
+                        1632,
+                        2
+                    ]
+                }
+            ]
+        ]
+    },
+    "py/object": "pahole_output_parser.MainStructure",
+    "py/seq": [
+        "B",
+        {
+            "py/id": 1
+        }
+    ]
+}

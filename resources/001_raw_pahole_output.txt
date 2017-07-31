@@ -1,0 +1,14 @@
+struct B {
+	struct A {
+		unsigned int       a;                                                    /*     0     4 */
+		unsigned char      b;                                                    /*     4     1 */
+		long unsigned int  c;                                                    /*     8     8 */
+		long long unsigned int d;                                                /*    16     8 */
+	} A_arr[10]; /*     0   240 */
+	unsigned char              byte_arr[5][4][3][7];                                 /*   240   420 */
+	short unsigned int         var;                                                  /*   660     2 */
+
+	/* size: 664, cachelines: 1, members: 3 */
+	/* padding: 2 */
+	/* last cacheline: 664 bytes */
+};
