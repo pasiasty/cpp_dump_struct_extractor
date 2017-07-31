@@ -75,7 +75,7 @@ class ArrayEntry:
         for idx, entry in enumerate(array):
             if isinstance(entry, CppStruct):
                 print_func(idx_string(idx, entry.type))
-                entry.print_structs_body(indent_offset, True)
+                entry.print_structs_body(print_func, indent_offset, True)
             elif isinstance(entry, list):
                 print_func(idx_string(idx))
                 ArrayEntry.print_arrays_body(print_func, entry, indent_offset, True)
@@ -150,11 +150,10 @@ class CppStruct:
         else:
             raise NotImplementedError('endiannes {}'.format(self.endiannes))
 
-    def __init__(self, print_func, struct_layout, dump, curr_offset=0, endiannes='>'):
+    def __init__(self, struct_layout, dump, curr_offset=0, endiannes='>'):
         self.endiannes = endiannes
         self.type = struct_layout.type
         self.fields = []
-        self.print_func = print_func
 
         for field in struct_layout.content:
             if len(field.array_desc) > 0:
@@ -178,7 +177,7 @@ class CppStruct:
                             array_ref = array_ref[current_multidim_idx[depth_idx]]
 
                         if isinstance(field, StructureFieldEntry):
-                            array_ref.append(CppStruct(self.print_func, field, dump, curr_offset, self.endiannes))
+                            array_ref.append(CppStruct(field, dump, curr_offset, self.endiannes))
                         elif isinstance(field, SimpleFieldEntry):
                             array_ref.append(ArrayElementEntry(value=self.merge_bytes(dump[curr_offset:curr_offset + single_entry_size]),
                                                                offset=curr_offset,
@@ -189,7 +188,7 @@ class CppStruct:
                     pass
             else:
                 if isinstance(field, StructureFieldEntry):
-                    setattr(self, field.name, CppStruct(self.print_func, field, dump, curr_offset, self.endiannes))
+                    setattr(self, field.name, CppStruct(field, dump, curr_offset, self.endiannes))
                 elif isinstance(field, SimpleFieldEntry):
                     setattr(self, field.name, StructFieldEntry(value=self.merge_bytes(dump[curr_offset:curr_offset + field.size]),
                                                                offset=curr_offset,
@@ -198,21 +197,21 @@ class CppStruct:
                 curr_offset += field.size
                 self.fields.append(field.name)
 
-    def print_structs_body(self, indent_offset, with_comma=False):
+    def print_structs_body(self, print_func, indent_offset, with_comma=False):
 
-        self.print_func(' ' * indent_offset.value + '{')
+        print_func(' ' * indent_offset.value + '{')
         indent_offset.increase()
 
         for field_name in self.fields:
             field = getattr(self, field_name)
             if isinstance(field, CppStruct):
-                self.print_func(' ' * indent_offset.value + '{} {}'.format(field.type, field_name))
-                field.print_structs_body(indent_offset)
+                print_func(' ' * indent_offset.value + '{} {}'.format(field.type, field_name))
+                field.print_structs_body(print_func, indent_offset)
             elif isinstance(field, ArrayEntry):
-                self.print_func(' ' * indent_offset.value + field.get_first_line_of_print(field_name))
-                ArrayEntry.print_arrays_body(self.print_func, field.content, indent_offset)
+                print_func(' ' * indent_offset.value + field.get_first_line_of_print(field_name))
+                ArrayEntry.print_arrays_body(print_func, field.content, indent_offset)
             elif isinstance(field, StructFieldEntry):
-                self.print_func(' ' * indent_offset.value + '{:<20} {:<35} = {:<15} (addr {:08X} size {:08X})'.format(
+                print_func(' ' * indent_offset.value + '{:<20} {:<35} = {:<15} (addr {:08X} size {:08X})'.format(
                     field.type,
                     field_name,
                     field.value,
@@ -224,11 +223,11 @@ class CppStruct:
 
         indent_offset.decrease()
         if with_comma:
-            self.print_func(' ' * indent_offset.value + '},')
+            print_func(' ' * indent_offset.value + '},')
         else:
-            self.print_func(' ' * indent_offset.value + '}')
+            print_func(' ' * indent_offset.value + '}')
 
-    def print_struct(self):
+    def print_struct(self, print_func):
 
-        self.print_func('{}'.format(self.type))
-        self.print_structs_body(CurrentIndentIndicator())
+        print_func('{}'.format(self.type))
+        self.print_structs_body(print_func, CurrentIndentIndicator())

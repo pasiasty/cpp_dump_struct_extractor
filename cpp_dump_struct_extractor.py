@@ -131,16 +131,24 @@ if args.which == 'full_mode':
         print(cmd)
 
     raw_pahole_output = subprocess.check_output(cmd,
-                                     shell=True)
+                                                shell=True)
 
     dump = open(args.dump_path, 'rb').read()
     struct_layout = PaholeOutputParser.parse_raw_pahole_output(raw_pahole_output)
 
-    with open(args.out_file, 'w') as out_file:
+    cpp_struct = CppStruct(my_print, struct_layout, dump, args.offset, args.endiannes)
 
-        def my_print(*args):
-            out_file.write(*args)
-            out_file.write('\n')
 
-        cpp_struct = CppStruct(my_print, struct_layout, dump, args.offset, args.endiannes)
-        cpp_struct.print_struct()
+    def my_print(*print_args):
+        out_file.write(*print_args)
+        out_file.write('\n')
+
+    with open('{}.txt'.format(args.out_file), 'w') as out_file:
+        cpp_struct.print_struct(out_file)
+
+    import jsonpickle
+    jsonpickle.set_preferred_backend('json')
+    jsonpickle.set_encoder_options(indent=4)
+
+    with open('{}.jsonpickle'.format(args.out_file), 'w') as out_file:
+        out_file.write(jsonpickle.encode(cpp_struct))

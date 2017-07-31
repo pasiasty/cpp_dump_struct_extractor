@@ -66,7 +66,7 @@ class CppStructTests(unittest.TestCase):
 
         dump = [0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F]
 
-        cpp_struct = CppStruct(print, struct_layout, dump)
+        cpp_struct = CppStruct(struct_layout, dump)
 
         self.assertEqual('int', cpp_struct.substruct.inner.type)
         self.assertEqual(0x00010203, cpp_struct.substruct.inner.value)
