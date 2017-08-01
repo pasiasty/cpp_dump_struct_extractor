@@ -119,8 +119,8 @@ if args.which == 'extractor_mode':
             out_file.write(*args)
             out_file.write('\n')
 
-        cpp_struct = CppStruct(my_print, struct_layout, dump, args.offset, args.endiannes)
-        cpp_struct.print_struct()
+        cpp_struct = CppStruct(struct_layout, dump, args.offset, args.endiannes)
+        cpp_struct.print_struct(my_print)
 
 if args.which == 'full_mode':
 
@@ -133,22 +133,24 @@ if args.which == 'full_mode':
     raw_pahole_output = subprocess.check_output(cmd,
                                                 shell=True)
 
+    raw_pahole_output = ''.join([chr(el) for el in raw_pahole_output])
+
     dump = open(args.dump_path, 'rb').read()
     struct_layout = PaholeOutputParser.parse_raw_pahole_output(raw_pahole_output)
 
-    cpp_struct = CppStruct(my_print, struct_layout, dump, args.offset, args.endiannes)
-
-
-    def my_print(*print_args):
-        out_file.write(*print_args)
-        out_file.write('\n')
+    cpp_struct = CppStruct(struct_layout, dump, args.offset, args.endiannes)
 
     with open('{}.txt'.format(args.out_file), 'w') as out_file:
-        cpp_struct.print_struct(out_file)
+
+        def my_print(*print_args):
+            out_file.write(*print_args)
+            out_file.write('\n')
+
+        cpp_struct.print_struct(my_print)
 
     import jsonpickle
     jsonpickle.set_preferred_backend('json')
-    jsonpickle.set_encoder_options(indent=4)
+    jsonpickle.set_encoder_options('json', indent=4)
 
     with open('{}.jsonpickle'.format(args.out_file), 'w') as out_file:
         out_file.write(jsonpickle.encode(cpp_struct))
