@@ -7,6 +7,30 @@ import unittest
 
 class PaholeOutputParserTests(unittest.TestCase):
 
+    def test_remove_not_exact_struct_definition(self):
+        pahole_output = """struct MyStruct2 {
+    int other_field;  /*     0   0x4 */
+
+    /* size: 4, cachelines: 1, members: 1 */
+    /* last cacheline: 4 bytes */
+};
+struct MyStruct {
+    int some_field;   /*     0   0x4 */
+
+    /* size: 4, cachelines: 1, members: 1 */
+    /* last cacheline: 4 bytes */
+};
+"""
+        expected_res = """struct MyStruct {
+    int some_field;   /*     0   0x4 */
+
+    /* size: 4, cachelines: 1, members: 1 */
+    /* last cacheline: 4 bytes */
+};"""
+
+        self.assertEqual(expected_res,
+                         PaholeOutputParser._remove_not_exact_struct_definition(pahole_output, 'MyStruct'))
+
     def test_extract_only_relevant_lines(self):
         with open(os.path.join('..', 'resources', '001_raw_pahole_output.txt'), 'r') as input_file:
             input_file_content = input_file.read()

@@ -11,6 +11,15 @@ SimpleFieldEntry = namedtuple('SimpleFieldEntry', ['type', 'name', 'array_desc',
 class PaholeOutputParser:
 
     @staticmethod
+    def _remove_not_exact_struct_definition(input_file, desired_struct):
+        arr = input_file.split('\n')
+
+        res_beg_idx = next(idx for (idx, el) in enumerate(arr) if ' {} {{'.format(desired_struct) in el)
+        res_end_idx = next(idx for (idx, el) in enumerate(arr[res_beg_idx:]) if '};' in el)
+
+        return '\n'.join(arr[res_beg_idx:res_beg_idx + res_end_idx + 1])
+
+    @staticmethod
     def _extract_only_relevant_lines(input_file):
         arr = input_file.split('\n')
         return [el for el in arr if '{' in el or '}' in el or ';' in el]
@@ -120,8 +129,9 @@ class PaholeOutputParser:
         return int(entry[:entry.rfind('*/')].strip().split(' ')[-1], 16)
 
     @staticmethod
-    def parse_raw_pahole_output(raw_pahole_output):
-        res = PaholeOutputParser._extract_only_relevant_lines(raw_pahole_output)
+    def parse_raw_pahole_output(raw_pahole_output, desired_struct):
+        res = PaholeOutputParser._remove_not_exact_struct_definition(raw_pahole_output, desired_struct)
+        res = PaholeOutputParser._extract_only_relevant_lines(res)
         res = PaholeOutputParser._get_info_of_main_structure(res)
         res = MainStructureSorted(res.type,
                                   PaholeOutputParser._sort_raw_struct_content_by_fields(res))

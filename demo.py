@@ -5,7 +5,7 @@ import os
 
 dump = open(os.path.join('demo', 'out.bin'), 'rb').read()
 raw_pahole_output = open(os.path.join('demo', 'raw_pahole_output.txt'), 'r').read()
-struct_layout = PaholeOutputParser.parse_raw_pahole_output(raw_pahole_output)
+struct_layout = PaholeOutputParser.parse_raw_pahole_output(raw_pahole_output, 'B')
 
 cpp_struct = CppStruct(struct_layout, dump, 0, '<')
 

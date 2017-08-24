@@ -56,6 +56,10 @@ extractor_mode_parser.add_argument('-o', '--out_file',
                                    dest='out_file',
                                    help='Output file for command results',
                                    required=True)
+extractor_mode_parser.add_argument('-s', '--struct_name',
+                                   dest='struct_name',
+                                   help='Name of structure to be analyzed',
+                                   required=True)
 extractor_mode_parser.add_argument('-v', '--verbose',
                                    dest='verbose',
                                    help='Run in verbose mode',
@@ -111,7 +115,7 @@ if args.which == 'extractor_mode':
 
     dump = open(args.dump_path, 'rb').read()
     raw_pahole_output = open(args.pahole_path, 'r').read()
-    struct_layout = PaholeOutputParser.parse_raw_pahole_output(raw_pahole_output)
+    struct_layout = PaholeOutputParser.parse_raw_pahole_output(raw_pahole_output, args.struct_name)
 
     with open(args.out_file, 'w') as out_file:
 
@@ -136,7 +140,7 @@ if args.which == 'full_mode':
     raw_pahole_output = ''.join([chr(el) for el in raw_pahole_output])
 
     dump = open(args.dump_path, 'rb').read()
-    struct_layout = PaholeOutputParser.parse_raw_pahole_output(raw_pahole_output)
+    struct_layout = PaholeOutputParser.parse_raw_pahole_output(raw_pahole_output, args.struct_name)
 
     cpp_struct = CppStruct(struct_layout, dump, args.offset, args.endiannes)
 
